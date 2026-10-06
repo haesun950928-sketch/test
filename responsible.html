@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul{list-style: none;}
+        a{text-decoration: none; color: inherit;}
+        
+
+        header{
+            width: 100%;
+            height: 80px;
+            line-height: 80px;
+
+            box-shadow: 1px 1px 5px #dddddd;
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .logo-menu{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            font-size: clamp(1rem, 4vw ,3rem);
+        }
+        .gnb{
+            display: flex;
+            gap: 10px;
+            color: #817f7f;
+
+            font-size: clamp(1rem, 4vw ,1.5rem);
+        }
+
+
+
+
+
+
+        main{
+            width: 100%;
+            margin-top: 80px;
+            background-color: #f7f7f7;
+
+            padding-top: clamp(50px, 4vw, 100px );
+        }
+        .title-box{
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 0 auto 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .title{
+            margin-top: 70px;
+        }
+        .title-box .title>h2{
+            font-size: clamp(1rem, 4.35vw, 2.5rem);
+        }
+        .title-box .title>p{
+            font-size: clamp(1rem, 4.35vw, 1.5rem);
+            color: #5f5e5e;
+            
+            /* white-space: nowrap; */
+            margin: 30px 0;
+        }
+        .title-box .title>div{
+            width: 55px;
+            height: 15px;
+            padding: 10px;
+            border-radius: 5px;
+
+            background-color: #d7650d;
+            color: #fff;
+            font-size: clamp(10pt, 2vw, 11pt);
+            text-align: center;
+        }
+
+        .title-box>img{
+            width: 40%;
+            height: auto;
+
+            aspect-ratio:  16/9;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+
+
+        .beans{ 
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+        }
+        .beans>h3{
+            font-size: clamp(15pt, 2vw, 18pt);
+            margin-bottom: 20px;
+        }
+        .coffee{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .coffee>li{
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+        .coffee>li>img{ 
+            width: 100%;
+
+            aspect-ratio: 16/12;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        .coffee>li>p{
+            width: 100%;
+            /* max-width: 400px;  이거 왜넣은거임??? */
+            /* height: 100px; */
+            background-color: #ffffffaa;
+
+            font-size: clamp(14pt, 2vw, 16pt);
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            transform: translateY(-50%);
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+
+
+
+
+        .best-menu{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+        }
+        .best-menu>h3{
+            font-size: clamp(15pt, 2vw, 18pt);
+            margin-bottom: 20px;
+        }
+        .best-menu .coffee2{
+            /* height: 300px; */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap :20px;
+            background-color: antiquewhite;
+        }
+        .best-menu .coffee2>li{
+            position: relative;
+            text-align: center;
+            padding: 0 20px 20px;
+        }
+        .best-menu .coffee2>li>img{
+            width: 100%;
+
+            aspect-ratio: 16/11;
+            border-radius: 20px;
+            object-fit: cover;
+            
+            box-shadow: 0 10px 10px -10px #7f7f7f;
+        }
+        .best-menu .coffee2>li>p{
+            width: 150px;
+            /* height: 100px; */
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            background-color: #ffffff;
+
+            font-size: clamp(10pt, 2vw, 12pt);
+
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            padding-top: 10px;
+            padding-bottom: 11px;
+        }
+
+        footer{
+            width: 100%;
+            height: 100px;
+            background-color: #2d2d2d;
+
+            padding-top: 30px;
+        }
+        .footer-logo{
+            width: 200px;
+            margin: 0 auto;
+
+            text-align: center;
+        }
+        .footer-logo>li:nth-child(1){
+            color: #fff;
+            font-size: clamp(13pt, 2vw, 15pt);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .footer-logo>li:nth-child(2),
+        .footer-logo>li:nth-child(3){
+            font-size:clamp(8pt, 2vw, 10pt) ;
+            color: #969595;
+        }
+
+
+
+        @media (max-width:768px) {
+            header{
+                height: 400px;
+                text-align: center;
+                box-shadow: none;
+            }
+            .logo-menu{
+                width: 100%;
+                flex-direction:column;
+            }
+            .gnb{
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+            }
+            .gnb>li{
+                width: 100%;
+                height: 100px;
+                border: 1px solid #616161;
+
+                background-color: #fff;
+            }
+
+
+            main{
+                margin-top: 380px;
+                text-align: center;
+            }
+            .title-box{
+                width: 100%;
+                flex-direction: column;
+            }
+            .title-box .title{
+                width: 100%;
+            }
+            .title-box .title>div{
+                margin: 0 auto;
+            }
+            .title-box>img{
+                width: 90%;
+                height: auto;
+                margin: 50px auto;
+            }
+
+
+            .beans{
+                width: 90%;
+            }
+            .coffee{
+                grid-template-columns: 1fr;
+            }
+            .coffee>li>img{
+                width: 100%;
+            }
+            .coffee>li>p{
+                width: 100%;
+            }
+
+
+            .best-menu{
+                width: 90%;
+            }
+            .best-menu .coffee2{
+                grid-template-columns: 1fr;
+            }
+
+            footer{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-menu">
+
+            <h1 class="logo">BREW & CO</h1>
+
+            <ul class="gnb">
+                <li>메뉴</li>
+                <li>소개</li>
+                <li>문의</li>
+            </ul>
+
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="title-box">
+                <div class="title">
+                    <h2>커피 한 잔의 여유</h2>
+                
+                    <p>
+                        바쁜 도시의 흐름 속에서<br>
+                        일상이 잠시 휴가처럼 느껴지는 순간,<br>
+                        도심 속 작은 쉼표를 전합니다.
+                    </p>
+                
+                    <div>메뉴 보기</div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="커피한잔">
+                
+            </div>
+        </section>
+
+        <section>
+            <div class="beans">
+                <h3>왜 우리인가?</h3>
+                    <ul class="coffee">
+                        <li>
+                            <img src="https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29mZmVlfGVufDB8fDB8fHww" alt="스페셜티 원두">
+                            <p>스페셜티 원두</p>
+                        </li>
+                        <li>
+                            <img src="https://plus.unsplash.com/premium_photo-1675788939191-713c2abf3da6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8JUVCJUI5JUI1fGVufDB8fDB8fHww" alt="">
+                            <p>매일 베이커리</p>
+                        </li>
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="편안한 공간">
+                            <p>편안한 공간</p>
+                        </li>
+                    </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="best-menu">
+                <h3>인기메뉴</h3>
+                    <ul class="coffee2">
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1562447457-579fc34967fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="아메리카노">
+                            <p>아메리카노</p>
+                        </li>
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="카페라떼">
+                            <p>카페라떼</p>
+                        </li>
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1565990436705-4bc429d16511?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fCVFQyVCRCU5QyVFQiU5MyU5QyVFQiVCOCU4QyVFQiVBMyVBOHxlbnwwfHwwfHx8MA%3D%3D" alt="콜드브루">
+                            <p>콜드브루</p>
+                        </li>
+                    </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+        <ul class="footer-logo">
+            <li>BREW & CO</li>
+            <li>서울 마포구 얀남동</li>
+            <li>@ 2026 AIl Richts Reserved</li>
+        </ul>
+    </footer>
+</body>
+</html>
